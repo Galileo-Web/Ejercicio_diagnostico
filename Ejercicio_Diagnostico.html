@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercico Diagnostico</h1>
+
+    <div>
+        <h3>Ingresa tus datos</h3>
+        <label>Nombre</label>
+        <input id="name" type=" ">
+        <label>Correo</label>
+        <input id="mail" type=" ">
+        <label>Matricula</label>
+        <input id="num" type=" ">
+        <button id="btn_guardar" onclick="guardar()">Guardar</button><br><br>
+    </div>
+
+    <div> <!--Script para capturar datos de usuario en la tabla html-->
+        <script>
+            function guardar(){
+              var _nomb=document.getElementById("name").value;
+              var _corr=document.getElementById("mail").value;
+              var _id=document.getElementById("num").value;
+
+              var fila="<tr><td>"+_nomb+"</td><td>"+_corr+"</td><td>"+_id;
+
+              var btn = document.createElement("TR");
+   	          btn.innerHTML=fila;
+              document.getElementById("tablita").appendChild(btn);
+            }
+        </script>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Matricula</th>
+              </tr>
+            </thead>
+            <tbody id="tablita">
+
+            </tbody>
+          </table>
+    </div>
+</body>
+</html>
